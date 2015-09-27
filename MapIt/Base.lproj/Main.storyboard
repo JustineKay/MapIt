@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-kK-UE6">
+                                <rect key="frame" x="0.0" y="99" width="600" height="501"/>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WhZ-aj-BYI" userLabel="topView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category (eg. food, museums, parks)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Do3-n1-iGD">
+                                        <rect key="frame" x="20" y="44" width="490" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTE-CU-e8O">
+                                        <rect key="frame" x="510" y="44" width="90" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="iZa-mC-yKh"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.87843137250000003" green="0.34901960780000002" blue="0.08235294118" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Search"/>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RYP-Dw-GwN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="JTE-CU-e8O" secondAttribute="trailing" id="RKf-zS-2V7"/>
+                                    <constraint firstAttribute="trailing" secondItem="Do3-n1-iGD" secondAttribute="trailing" constant="8" id="UdA-VS-ger"/>
+                                    <constraint firstItem="JTE-CU-e8O" firstAttribute="leading" secondItem="Do3-n1-iGD" secondAttribute="trailing" id="YxV-CJ-3zN"/>
+                                    <constraint firstItem="Do3-n1-iGD" firstAttribute="leading" secondItem="WhZ-aj-BYI" secondAttribute="leading" constant="20" id="hTf-SC-4Fy"/>
+                                    <constraint firstAttribute="height" constant="99" id="jw4-EY-Kkc"/>
+                                    <constraint firstAttribute="bottom" secondItem="JTE-CU-e8O" secondAttribute="bottom" constant="25" id="p1o-1Y-a0g"/>
+                                    <constraint firstAttribute="bottom" secondItem="Do3-n1-iGD" secondAttribute="bottom" constant="25" id="vQa-DT-O7H"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="UdA-VS-ger"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WhZ-aj-BYI" secondAttribute="trailing" id="86e-2B-xob"/>
+                            <constraint firstItem="WhZ-aj-BYI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="8yE-6u-ynr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ewd-kK-UE6" secondAttribute="bottom" id="91s-FR-2MV"/>
+                            <constraint firstAttribute="trailing" secondItem="ewd-kK-UE6" secondAttribute="trailing" id="VNC-gW-JV6"/>
+                            <constraint firstItem="WhZ-aj-BYI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XMS-qx-DgH"/>
+                            <constraint firstItem="ewd-kK-UE6" firstAttribute="top" secondItem="WhZ-aj-BYI" secondAttribute="bottom" id="Y0Y-gg-mTX"/>
+                            <constraint firstItem="ewd-kK-UE6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="iT3-zP-CDb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="ewd-kK-UE6" id="b7f-R5-CuK"/>
+                        <outlet property="searchTextField" destination="Do3-n1-iGD" id="wkX-6D-KSE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="387"/>
+        </scene>
+    </scenes>
+</document>
